@@ -3,13 +3,13 @@ import time
 
 def main():
     #initialize all counter vars to 0
-    playerRounds, cpuRounds, roundCount, totalRounds= (0,0,0,0)
-    playerGames, cpuGames, playerTotalRounds, cpuTotalRounds = (0,0,0,0)
-    playerGamePrecent, cpuGamePercent, playerRoundPercent, cpuRoundPercent = (0,0,0,0)
-    totalDraws, drawPercent = (0,0)
+    player_rounds, cpu_rounds, round_count, total_rounds= (0,0,0,0)
+    player_games, cpu_games, player_total_rounds, cpu_total_rounds = (0,0,0,0)
+    player_game_precent, cpu_game_percent, player_round_percent, cpu_round_percent = (0,0,0,0)
+    total_draws, draw_percent = (0,0)
 
     # becasue one pass will always result in one game played
-    totalGames = 1
+    total_games = 1
 
     description= """
    ##############################################################
@@ -88,23 +88,23 @@ def main():
 
         # Each game is best of 3 rounds
         # player and cpu Rounds represent the number of rounds won during the current game
-        while((playerRounds < 2) and (cpuRounds < 2)):
-            print (score.format(playerRounds, cpuRounds))
+        while((player_rounds < 2) and (cpu_rounds < 2)):
+            print (score.format(player_rounds, cpu_rounds))
 
             # ask the user to choose a weapon and validate their input
             while True:
-                playerChoice = input("Make a selection: Rock (R), Scissors(S), Paper(P) >> ")
-                if playerChoice.lower() not in ('r', 'p', 's'):
+                player_choice = input("Make a selection: Rock (R), Scissors(S), Paper(P) >> ")
+                if player_choice.lower() not in ('r', 'p', 's'):
                     print("!Not a valid entry! valid entries: r, p, or s ")
                 else:
                     break
 
             # a random weapon is selected for the cpu from the tuple
-            cpuChoice = random.choice(('r', 'p', 's'))
+            cpu_choice = random.choice(('r', 'p', 's'))
 
             # concatinate player and cpu choices into a single string
             # the resulting two character string will determine the winner
-            matchUp = playerChoice + cpuChoice
+            match_up = player_choice + cpu_choice
 
             # comment out time.sleep(1) for faster gameplay
             # count down for dramatic effect
@@ -116,80 +116,80 @@ def main():
             time.sleep(1)
 
             # display the player and cpu choices
-            if playerChoice == 'r':
-                playerWeapon = weapons[0]
-            elif playerChoice == 'p':
-                playerWeapon = weapons[1]
+            if player_choice == 'r':
+                player_weapon = weapons[0]
+            elif player_choice == 'p':
+                player_weapon = weapons[1]
             else:
-                playerWeapon = weapons[2]
+                player_weapon = weapons[2]
 
-            if cpuChoice == 'r':
-                cpuWeapon = weapons[0]
-            elif cpuChoice == 'p':
-                cpuWeapon = weapons[1]
+            if cpu_choice == 'r':
+                cpu_weapon = weapons[0]
+            elif cpu_choice == 'p':
+                cpu_weapon = weapons[1]
             else:
-                cpuWeapon = weapons[2]
+                cpu_weapon = weapons[2]
 
             #display the chosen weappons on the stage
-            print (stage.format(playerWeapon,cpuWeapon,align='^', width='10'))
+            print (stage.format(player_weapon,cpu_weapon,align='^', width='10'))
 
             # compare the current matchUp to the possible results
             # Draw
-            if (matchUp == results[0][0] or matchUp == results[1][0] or matchUp == results[2][0]):
+            if (match_up == results[0][0] or match_up == results[1][0] or match_up == results[2][0]):
                 print ('{:{align}{width}}'.format('DRAW.', align='^', width='21'))
-                totalDraws += 1
+                total_draws += 1
 
             #player wins
-            elif (matchUp == results[0][1] or matchUp == results[1][1] or matchUp == results[2][1]):
+            elif (match_up == results[0][1] or match_up == results[1][1] or match_up == results[2][1]):
                 print ('{:{align}{width}}'.format('YOU WON!', align='^', width='25'))
-                playerRounds += 1
-                playerTotalRounds += 1
+                player_rounds += 1
+                player_total_rounds += 1
 
             #cpu wins
             else:
                 print ('{:{align}{width}}'.format('YOU LOST!', align='^', width='25'))
-                cpuRounds += 1
-                cpuTotalRounds += 1
+                cpu_rounds += 1
+                cpu_total_rounds += 1
 
-            roundCount += 1
-            totalRounds += 1
+            round_count += 1
+            total_rounds += 1
 
-        if playerRounds >= 2:
+        if player_rounds >= 2:
             print('')
             print('')
-            playerGames += 1
-            print (score.format(playerRounds, cpuRounds))
+            player_games += 1
+            print (score.format(player_rounds, cpu_rounds))
             print('YOU WON THE GAME.')
 
         else:
             print('')
             print('')
-            cpuGames += 1
-            print (score.format(playerRounds, cpuRounds))
+            cpu_games += 1
+            print (score.format(player_rounds, cpu_rounds))
             print('YOU LOST THE GAME.')
 
         # ask if user would like to play another game
         while True:
-            playerChoice = input("\nWould you like to play again? Yes[y] No[n]>> ")
-            if playerChoice.lower() not in ('y', 'n'):
+            player_choice = input("\nWould you like to play again? Yes[y] No[n]>> ")
+            if player_choice.lower() not in ('y', 'n'):
                 print("\n!Not a valid entry! valid entries: y, or n ")
             else:
                 break
 
         # the player chooses to end the game calcualte and display the stats from session
-        if playerChoice == 'n':
-            playerGamePercent = playerGames/totalGames
-            cpuGamePercent = cpuGames/totalGames
+        if player_choice == 'n':
+            player_game_percent = player_games/total_games
+            cpu_game_percent = cpu_games/total_games
 
-            playerRoundPercent = playerTotalRounds/totalRounds
-            cpuRoundPercent = cpuTotalRounds/totalRounds
+            player_round_percent = player_total_rounds/total_rounds
+            cpu_round_percent = cpu_total_rounds/total_rounds
 
-            drawPercent = totalDraws/totalRounds
+            draw_percent = total_draws/total_rounds
 
-            print(stats.format(totalGames, totalRounds, totalDraws, drawPercent,\
-                               playerGames, playerGamePercent, playerTotalRounds,\
-                               playerRoundPercent,cpuGames, cpuGamePercent,\
-                               cpuTotalRounds, cpuRoundPercent, width=5, prec=2))
+            print(stats.format(total_games, total_rounds, total_draws, draw_percent,\
+                               player_games, player_game_percent, player_total_rounds,\
+                               player_round_percent,cpu_games, cpu_game_percent,\
+                               cpu_total_rounds, cpu_round_percent, width=5, prec=2))
             input('>>> Hit any key to end session')
             break
 
@@ -197,11 +197,11 @@ def main():
         # if this isn't done counters will be left with the result of the previous game
         # This breaks the second while loop condition causing the game to end instantly
         else:
-            totalGames += 1
+            total_games += 1
 
-            playerRounds = 0
-            cpuRounds = 0
-            roundCount = 0
+            player_rounds = 0
+            cpu_rounds = 0
+            round_count = 0
 
 ################################################################
 if __name__ == "__main__":
