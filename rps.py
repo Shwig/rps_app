@@ -22,18 +22,18 @@ def main():
     total_games = 1
 
     description = """
-   ##############################################################
-   #                                                            #
-   #     Welcome to the Rock, Paper, Scissors game!             #
-   #                                                            #
-   #     To play select r, p, or s from the keyboard            #
-   #     then hit enter.                                        #
-   #                                                            #
-   #     The winner is the best of 3 rounds.                    #
-   #     Good luck!                                             #
-   #                                                            #
-   ##############################################################
-       """
+    ##############################################################
+    #                                                            #
+    #     Welcome to the Rock, Paper, Scissors game!             #
+    #                                                            #
+    #     To play select r, p, or s from the keyboard            #
+    #     then hit enter.                                        #
+    #                                                            #
+    #     The winner is the best of 3 rounds.                    #
+    #     Good luck!                                             #
+    #                                                            #
+    ##############################################################
+    """
 
     score = """
                Score
