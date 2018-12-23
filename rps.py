@@ -3,7 +3,7 @@ import time
 
 def main():
     # initialize all counter vars to 0
-    player_rounds, cpu_rounds, round_count, total_rounds= (0,0,0,0)
+    player_rounds, cpu_rounds, round_count, total_rounds = (0,0,0,0)
     player_games, cpu_games, player_total_rounds, cpu_total_rounds = (0,0,0,0)
     player_game_precent, cpu_game_percent, player_round_percent, cpu_round_percent = (0,0,0,0)
     total_draws, draw_percent = (0,0)
@@ -11,7 +11,7 @@ def main():
     # becasue one pass will always result in one game played
     total_games = 1
 
-    description= """
+    description = """
    ##############################################################
    #                                                            #
    #     Welcome to the Rock, Paper, Scissors game!             #
