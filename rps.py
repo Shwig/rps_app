@@ -2,7 +2,7 @@ import random
 import time
 
 def main():
-    #initialize all counter vars to 0
+    # initialize all counter vars to 0
     player_rounds, cpu_rounds, round_count, total_rounds= (0,0,0,0)
     player_games, cpu_games, player_total_rounds, cpu_total_rounds = (0,0,0,0)
     player_game_precent, cpu_game_percent, player_round_percent, cpu_round_percent = (0,0,0,0)
@@ -67,17 +67,17 @@ def main():
     m = 3
     results = [[0] * m for i in range(n)]
 
-    results[0][0] = "rr" #draw
-    results[0][1] = "rs" #win
-    results[0][2] = "rp" #lose
+    results[0][0] = "rr"  # draw
+    results[0][1] = "rs"  # win
+    results[0][2] = "rp"  # lose
 
-    results[1][0] = "pp" #draw
-    results[1][1] = "pr" #win
-    results[1][2] = "ps" #lose
+    results[1][0] = "pp"  # draw
+    results[1][1] = "pr"  # win
+    results[1][2] = "ps"  # lose
 
-    results[2][0] = "ss" #draw
-    results[2][1] = "sp" #win
-    results[2][2] = "sr" #lose
+    results[2][0] = "ss"  # draw
+    results[2][1] = "sp"  # win
+    results[2][2] = "sr"  # lose
 
     ##############################################################
 
@@ -130,7 +130,7 @@ def main():
             else:
                 cpu_weapon = weapons[2]
 
-            #display the chosen weappons on the stage
+            # display the chosen weappons on the stage
             print (stage.format(player_weapon,cpu_weapon,align='^', width='10'))
 
             # compare the current matchUp to the possible results
@@ -139,13 +139,13 @@ def main():
                 print ('{:{align}{width}}'.format('DRAW.', align='^', width='21'))
                 total_draws += 1
 
-            #player wins
+            # player wins
             elif (match_up == results[0][1] or match_up == results[1][1] or match_up == results[2][1]):
                 print ('{:{align}{width}}'.format('YOU WON!', align='^', width='25'))
                 player_rounds += 1
                 player_total_rounds += 1
 
-            #cpu wins
+            # cpu wins
             else:
                 print ('{:{align}{width}}'.format('YOU LOST!', align='^', width='25'))
                 cpu_rounds += 1
