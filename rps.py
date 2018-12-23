@@ -12,12 +12,7 @@ def main():
     cpu_games = 0
     player_total_rounds = 0
     cpu_total_rounds = 0
-    player_game_precent = 0
-    cpu_game_percent = 0
-    player_round_percent = 0
-    cpu_round_percent = 0
     total_draws = 0
-    draw_percent = 0
 
     # becasue one pass will always result in one game played
     total_games = 1
