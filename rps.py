@@ -166,15 +166,13 @@ def main():
             total_rounds += 1
 
         if player_rounds >= 2:
-            print('')
-            print('')
+            print('\n\n')
             player_games += 1
             print(score.format(player_rounds, cpu_rounds))
             print('YOU WON THE GAME.')
 
         else:
-            print('')
-            print('')
+            print('\n\n')
             cpu_games += 1
             print(score.format(player_rounds, cpu_rounds))
             print('YOU LOST THE GAME.')
