@@ -100,7 +100,7 @@ def main():
         # Each game is best of 3 rounds
         # player and cpu Rounds represent the number of rounds won during the current game
         while((player_rounds < 2) and (cpu_rounds < 2)):
-            print (score.format(player_rounds, cpu_rounds))
+            print(score.format(player_rounds, cpu_rounds))
 
             # ask the user to choose a weapon and validate their input
             while True:
@@ -142,23 +142,23 @@ def main():
                 cpu_weapon = weapons[2]
 
             # display the chosen weappons on the stage
-            print (stage.format(player_weapon,cpu_weapon,align='^', width='10'))
+            print(stage.format(player_weapon,cpu_weapon,align='^', width='10'))
 
             # compare the current matchUp to the possible results
             # Draw
             if (match_up == results[0][0] or match_up == results[1][0] or match_up == results[2][0]):
-                print ('{:{align}{width}}'.format('DRAW.', align='^', width='21'))
+                print('{:{align}{width}}'.format('DRAW.', align='^', width='21'))
                 total_draws += 1
 
             # player wins
             elif (match_up == results[0][1] or match_up == results[1][1] or match_up == results[2][1]):
-                print ('{:{align}{width}}'.format('YOU WON!', align='^', width='25'))
+                print('{:{align}{width}}'.format('YOU WON!', align='^', width='25'))
                 player_rounds += 1
                 player_total_rounds += 1
 
             # cpu wins
             else:
-                print ('{:{align}{width}}'.format('YOU LOST!', align='^', width='25'))
+                print('{:{align}{width}}'.format('YOU LOST!', align='^', width='25'))
                 cpu_rounds += 1
                 cpu_total_rounds += 1
 
@@ -169,14 +169,14 @@ def main():
             print('')
             print('')
             player_games += 1
-            print (score.format(player_rounds, cpu_rounds))
+            print(score.format(player_rounds, cpu_rounds))
             print('YOU WON THE GAME.')
 
         else:
             print('')
             print('')
             cpu_games += 1
-            print (score.format(player_rounds, cpu_rounds))
+            print(score.format(player_rounds, cpu_rounds))
             print('YOU LOST THE GAME.')
 
         # ask if user would like to play another game
