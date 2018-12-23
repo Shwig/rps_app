@@ -197,9 +197,9 @@ def main():
 
             draw_percent = total_draws/total_rounds
 
-            print(stats.format(total_games, total_rounds, total_draws, draw_percent,\
-                               player_games, player_game_percent, player_total_rounds,\
-                               player_round_percent, cpu_games, cpu_game_percent,\
+            print(stats.format(total_games, total_rounds, total_draws, draw_percent,
+                               player_games, player_game_percent, player_total_rounds,
+                               player_round_percent, cpu_games, cpu_game_percent,
                                cpu_total_rounds, cpu_round_percent, width=5, prec=2))
             input('>>> Hit any key to end session')
             break
