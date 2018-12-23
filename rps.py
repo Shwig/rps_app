@@ -1,6 +1,7 @@
 import random
 import time
 
+
 def main():
     # initialize all counter vars to 0
     player_rounds = 0
@@ -213,6 +214,6 @@ def main():
             cpu_rounds = 0
             round_count = 0
 
-################################################################
+
 if __name__ == "__main__":
     main()    
