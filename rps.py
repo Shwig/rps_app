@@ -121,20 +121,25 @@ def main():
             print("     Scissors!")
             time.sleep(1)
 
-            # display the player and cpu choices
-            if player_choice == 'r':
-                player_weapon = weapons[0]
-            elif player_choice == 'p':
-                player_weapon = weapons[1]
-            else:
-                player_weapon = weapons[2]
+            # choose player weapon from weapons based on input
+            choice = list(filter(lambda x : player_choice.upper() in x, weapons))
+            player_weapon = choice[0]
+            # if player_choice == 'r':
+            #     player_weapon = weapons[0]
+            # elif player_choice == 'p':
+            #     player_weapon = weapons[1]
+            # else:
+            #     player_weapon = weapons[2]
 
-            if cpu_choice == 'r':
-                cpu_weapon = weapons[0]
-            elif cpu_choice == 'p':
-                cpu_weapon = weapons[1]
-            else:
-                cpu_weapon = weapons[2]
+            # choose cpu weapon from weapons based on random selection
+            choice = list(filter(lambda x : cpu_choice.upper() in x, weapons))
+            cpu_weapon = choice[0]
+            # if cpu_choice == 'r':
+            #     cpu_weapon = weapons[0]
+            # elif cpu_choice == 'p':
+            #     cpu_weapon = weapons[1]
+            # else:
+            #     cpu_weapon = weapons[2]
 
             # display the chosen weappons on the stage
             print(stage.format(player_weapon, cpu_weapon, align='^', width='10'))
@@ -209,4 +214,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()    
+    main()
